@@ -1,5 +1,5 @@
 puts 'HOW LOVELY TO SEE YOU, DARLING!'
-puts 'ISN\'T IT SO KIND OF THEM TO VISIT, GERTRUDE?'
+puts "ISN'T IT SO KIND OF THEM TO VISIT, GERTRUDE?"
 puts 'POOR OLD BOB—YOU KNOW BOB? THIRD FLOOR?—HASN\'T HAD VISITORS IN AT LEAST A YEAR, AND HIM WITH FIVE CHILDREN, TOO.'
 puts 'BUT HOW ARE YOU? COME AND TELL GRANDMA.'
 puts ' '
@@ -38,7 +38,7 @@ while value != 0
     elsif response == response.upcase
       puts ' '
       puts 'HOW KIND OF YOU TO ASK!'
-        year = (rand(21) + 1930)
+        year = (rand(22) + 1929)
       puts 'NOT SINCE ' + year.to_s + ', IF YOU MUST KNOW.'
       puts ' '
     else

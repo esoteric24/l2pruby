@@ -8,8 +8,14 @@ puts 'Ending year?'
   answer = 0
 
 while currentyear <= year2
-  if currentyear%4 == 0
+  if currentyear%100 == 0
+    if currentyear%400 == 0
+      answer = answer + 1
+    end
+  else
+    if currentyear%4 == 0
     answer = answer + 1
+    end
   end
   currentyear = currentyear + 1
 end
@@ -19,5 +25,3 @@ if answer != 1
 else
   puts 'There is ' + answer.to_s + ' leap year between ' + year1.to_s + ' and ' + year2.to_s + '.'
 end
-
-# just a comment
