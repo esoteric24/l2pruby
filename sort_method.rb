@@ -15,11 +15,9 @@ loop do
   end    
 end
 
-puts inputs.to_s
-
 sorted = []
 
-def alphabetize array, sorted
+def alphabetize (array, sorted)
   while sorted[$list_length] == nil
     slot_a = 0
     slot_b = 1
@@ -42,7 +40,8 @@ def alphabetize array, sorted
   end
 end
 
-alphabetize inputs, sorted
+alphabetize (inputs, sorted)
 
 puts 'In alphabetical order, your items are:'
-puts sorted.to_s
+puts ''
+puts sorted
