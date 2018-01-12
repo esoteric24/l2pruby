@@ -1,5 +1,5 @@
 inputs = []
-input = 'placeholder'
+input = ''
 $list_length = -1
 
 

@@ -1,5 +1,5 @@
 inputs = []
-input = 'lel'
+input = ''
 $list_length = -1
 
 
@@ -12,7 +12,7 @@ loop do
     $list_length = $list_length + 1
   else
     break
-  end    
+  end
 end
 
 sorted = []

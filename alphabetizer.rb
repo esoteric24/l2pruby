@@ -1,17 +1,14 @@
 inputs = []
-slot_number = -1
 input = ''
-switch = 'on'
 
 puts 'Enter any number of words, one word per line. Hit "enter" on an empty line to alphabetize them.'
 
-while switch == 'on'
+loop do
   input = gets.chomp.downcase
     if input != ''
-      slot_number = slot_number + 1
-      inputs[slot_number] = input
+      inputs.push input
     else
-      switch = 'off'
+      break
     end
 end
 

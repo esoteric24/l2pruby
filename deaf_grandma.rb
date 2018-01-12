@@ -5,9 +5,8 @@ puts 'BUT HOW ARE YOU? COME AND TELL GRANDMA.'
 puts ' '
 
 response = ''
-value = ''
 
-while value != 0
+loop do
   response = gets.chomp
     if response == 'BYE'
       puts ' '
@@ -24,7 +23,7 @@ while value != 0
               puts '...OH, DEAR, IS THAT WHAT YOU WERE SAYING?'
               puts 'WELL.'
               puts 'GOODBYE, I SUPPOSE. COME AGAIN SOON!'
-                value = 0
+                break
             else
               puts ' '
               puts 'CHERRY. DEFINITELY CHERRY. MY MOTHER\'S RECIPE WON A PRIZE AT THE COUNTY FAIR IN \'32, YOU KNOW.'

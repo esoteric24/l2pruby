@@ -1,5 +1,5 @@
 def ask question
-  while 1 == 1
+  loop do
     puts question
     reply = gets.chomp.downcase
 
