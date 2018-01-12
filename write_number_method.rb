@@ -22,14 +22,14 @@ def write_number number
       tens = ['ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
       teens = ['eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
 
-      hundreds_place = number/100
-        if hundreds_place >= 1
-          $num_string = $num_string + (ones[(hundreds_place - 1)]).to_s + ' hundred '
-        end
+        hundreds_place = number/100
+          if hundreds_place >= 1
+            $num_string = $num_string + ones[hundreds_place - 1] + ' hundred '
+          end
 
-      number = number - (hundreds_place*100)
+        number = number - (hundreds_place*100)
 
-      tens_place = number/10
+        tens_place = number/10
           if tens_place > 1
             $num_string = $num_string + tens[(tens_place - 1)]
           end
@@ -50,7 +50,7 @@ def write_number number
           end
 
           if (tens_place == 0)&&(ones_place != 0)
-            $num_string = $numstring + (ones[(ones_place - 1)]) + ' '
+            $num_string = $num_string + (ones[(ones_place - 1)]) + ' '
           end
 
       return $num_string
@@ -59,39 +59,34 @@ def write_number number
 
   remaining = number
 
-  if (remaining - 10**12) >= 0
-    trillions = remaining/(10**12)
-     englishify trillions
-      $num_string = $num_string + 'trillion '
-        remaining = remaining - (trillions*10**12)
-  end
+    trillions = ''
+  trillion_array = [10**12, trillions, 'trillion ']
+    billions = ''
+  billion_array = [10**9, billions, 'billion ']
+    millions = ''
+  million_array = [10**6, millions, 'million ']
+    thousands = ''
+  thousand_array = [10**3, thousands, 'thousand ']
 
-  if (remaining - 10**9) >= 0
-    billions = remaining/(10**9)
-     englishify billions
-      $num_string = $num_string + 'billion '
-        remaining = remaining - (billions*10**9)
-  end
+  master_array = [trillion_array, billion_array, million_array, thousand_array]
 
-  if (remaining - 10**6) >= 0
-    millions = remaining/(10**6)
-     englishify millions
-      $num_string = $num_string + 'million '
-        remaining = remaining - (millions*10**6)
-  end
+  slot = 0
 
-  if (remaining - 10**3) >= 0
-    thousands = remaining/(10**3)
-     englishify thousands
-      $num_string = $num_string + 'thousand '
-        remaining = remaining - (thousands*10**3)
+  while slot <= 3
+   if (remaining - master_array[slot][0]) >= 0
+     master_array[slot][1] = remaining/(master_array[slot][0])
+     englishify master_array[slot][1]
+      $num_string = $num_string + master_array[slot][2]
+        remaining = remaining - ((master_array[slot][1])*(master_array[slot][0]))
+    end
+    slot = slot + 1
   end
 
   if remaining > 0
      englishify remaining
   end
 
-  $num_string
+  return $num_string
 
 end
 
