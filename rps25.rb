@@ -14,8 +14,8 @@ a = 'gun'
   n = 'wolf'
   o = 'cockroach'
   p = 'tree'
-  q = 'man'
-  r = 'woman'
+  q = 'child'
+  r = 'adult'
   s = 'monkey'
   t = 'snake'
   u = 'axe'
@@ -25,6 +25,18 @@ a = 'gun'
   y = 'rock'
 
 $aB = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y]
+
+#verbs
+#'attacks': a => y, a => x, a => p, n => g, n => e, s => r, s => q, s => n, s => g,
+# t => r, t => q, t => n
+#'creates': a => w, b => w, c => w, d => b, e => d, e => c, e => b, e => a, f => d,
+# f => w, g => d, p => j, p => i, q => p, r => q, r => p
+#'destroys': a => v, b => a, b => y, b => v, b => u, b => t, b => s, b => r, b => q,
+# b => p, b => o, c => b, c => a, c => y, c => v, c => u, d => a, d => v, d => u,
+# g => a, g => y, g => x, g => v, g => u, j => h, n => m, n => l, s => m, s => l,
+# t => m, u => m, w => v, w => u, w => m, w => l, y => m
+#'damages': a => u, m => l, v => u, v => p, v => m, v => l, x => v, x => u, x => m
+
 
 def falsify range
   for $slotNum in range do
