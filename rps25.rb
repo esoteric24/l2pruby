@@ -25,6 +25,8 @@ a = 'gun'
   y = 'rock'
 
 $aB = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y]
+$rA = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+  ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
 $vA = [' attacks ', ' creates ', ' destroys ', ' damages ', ' kills ',
   ' covers ', 'stops', ' breaks ', ' hurts ', ' ignores ', ' uses ']
@@ -120,13 +122,13 @@ end
 
 def falsify range
   for $slotNum in range do
-    $aB[$slotNum] = 'false'
+    $rA[$slotNum] = 'false'
   end
 end
 
 def truthify range
   for $slotNum in range do
-    $aB[$slotNum] = 'true'
+    $rA[$slotNum] = 'true'
   end
 end
 
@@ -140,7 +142,7 @@ def inputCheck input
 end
 
 def determine tie
-  $aB[tie] = 'tie'
+  $rA[tie] = 'tie'
 
   if tie + 1 < 24
 	   rangeStart = tie + 1
@@ -212,7 +214,7 @@ else
   determine $userSlot
 end
 
-result = $aB[comSlot]
+result = $rA[comSlot]
 
 if $checkResult == 'valid'
   if result == 'true'
